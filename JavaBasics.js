@@ -47,3 +47,26 @@ function EVCPlus() {
      
     }
   }
+
+
+  function CorrectPhone() {
+    let phone = document.getElementById('Correct').value;
+    let number = '';
+    document.getElementById('tell').innerHTML = "";
+    if (phone.length === 9) {
+        if (phone.charAt(0) === '6') {
+            if (phone.charAt(1) === '1' || phone.charAt(1) === '8') {
+                number = "Correct ";
+                
+            }
+        }
+    } else {
+        number = "Wrong  ";
+       
+    }
+
+    document.getElementById('tell').innerHTML ="<b/>   "+ number;
+     
+  }
+
+
