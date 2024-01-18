@@ -43,7 +43,7 @@ function EVCPlus() {
       document.getElementById('LastBh').innerHTML = " Hassan Balance is: " + HassanB;
 
     } else if (chose == '3') {
-       document.getElementById('TRF').innerHTML = " Inter Old PIN ";
+      
      
     }
   }
