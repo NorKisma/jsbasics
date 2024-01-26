@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Flag.css">
+    <title>Somali States</title>
+</head>
+<body>
+<form action="" >
+    <h1>Flags Of Somali Stages</h1>
+
+    <label for="Stage">Select Stage:</label>
+    <select id="Stage" name="Stage" onchange="StageFlag()">
+        <option value="Selecte">Selecte One</option>
+        <option value="Hirshabeele">Hirshabeele</option>
+        <option value="Banaadir">Banaadir</option>
+      
+        <option value="Jubaland">Jubaland</option>
+        <option value="Soomaliland">Soomaliland</option>
+        
+      
+        
+    </select><br>
+
+    <label >Your Flag Is</label>
+    <div class="S-result">
+        <div class="result" id="flagimage">
+           
+            <img src="Flags/Hirshabele.jpg" alt="Hirshabele" class="flag" data-flag="HirshabeeleFlag">
+            <img src="Flags/Jupaland.jpg" alt="Jubaland" class="flag" data-flag="JubalandFlag">
+            
+            <img src="Flags/Banaadir.jpg" alt="Banaadir" class="flag" data-flag="BanaadirFlag">
+          
+            <img src="Flags/Soomaliland.jpg" alt="Somaliland" class="flag" data-flag="SoomalilandFlag">
+        </div>
+    </div>
+</form>
+<script src="Flag.js"></script>
+</body>
+</html>

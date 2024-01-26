@@ -6,11 +6,6 @@
     var today = new Date();
   
     var age = today.getFullYear() - birthDate.getFullYear();
-  
-    if (today.getMonth() < birthDate.getMonth() || (today.getMonth() === birthDate.getMonth() && today.getDate() < birthDate.getDate())) {
-      age--;
-    }
-  
     document.getElementById("ageResult").value = age;
   }
   
@@ -41,8 +36,8 @@
 
   
   function calculateGrade() {
-    var grade = parseFloat(document.getElementById("totalMarks").value);
-     
+    //var grade = parseFloat(document.getElementById("totalMarks").value);
+    var grade = document.getElementById("totalMarks").value;
     if (grade >= 90) {
       return 'A';
     } else if (grade >= 80) {
@@ -58,6 +53,7 @@
     }
     
   }
+
   
   function submitForm() {
     var formData = {
