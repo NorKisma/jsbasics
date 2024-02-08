@@ -1,3 +1,4 @@
+
 function EVCPlus() {
     let enteredPin = document.getElementById('pin').value;
     let correctPin = '1234';

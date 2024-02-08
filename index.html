@@ -1,63 +1,77 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <!-- Your head content here -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Information Form</title>
+  <!-- Include your CSS file -->
+  <link rel="stylesheet" href="css.css">
+
+  <!-- Include jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
-
 <body>
-  
-  <h2>What is tha Phone Number</h2>
-  <form>
-    <label>Enter your Phone Number: </label>
-    <input type="text" id="Correct"> <br><br>
-   
-     <label id="Number">Your Phone Number  is:   </label> 
-      <label id="tell"> </label> <br>
-    <input type="button" value="Phone Number" onclick="CorrectPhone()"><br><br>
-</form>
+
+          <!-- Form for entering user information -->
+          <form id="userForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="university">University:</label>
+            <input type="text" id="university" name="university" required>
+
+            <label for="birthDate">Birth Date:</label>
+            <input type="date" id="birthDate" onchange="calculateAge()" name="birthDate" required>
+            
+            <!-- Display age result -->
+            <label for="ageResult">Age:</label>
+            <input type="text" id="ageResult" name="ageResult" readonly>
+            
+
+            <label for="District">District:</label>
+                  <select id="District" onchange="setCity()" name="District" required>
+                    <option value="">Select District</option>
+                    <option value="Kismayo">Kismayo</option>
+                    <option value="Jawhar">Jawhar</option>
+                    <option value="Baladwayne">Baladwayne</option>
+                    <option value="Moqdisho">Moqdisho</option>
+                    <option value="Marka">Marka</option>
+                    <option value="Hodan">Hodan</option>
+                  </select> <br/><br/>
 
 
+            <label for="City">City</label>
+            <input type="text" id="City" name="City" required>
+            
+            <label for="totalMarks">Total Marks:</label>
+          <input type="text" id="totalMarks" onchange="calculateGrade()" name="totalMarks" min="0" max="100" required>
+
+          <label for="Grade">Grade:</label>
+          <input type="text" id="Grade" name="Grade" readonly>
 
 
-  
+            <button type="button" onclick="submitForm()">Submit</button>
+          </form>
 
-  <form>
-    <label>Enter your PIN: </label>
-    <input type="text" id="pin"> <br><br>
-    <label id="Itus"></label><br>
-    <label id="Uwareeji"></label><br>
-    <label id="Badal"></label><br>
-    <label id="Bixi"></label><br>
-    <label id="incorrectPin"></label>
-    <input type="button" value="Submit" onclick="EVCPlus()"><br><br>
-    <label>Enter your number: </label>
-    <input type="text" id="number"> <br><br>
-    <label id="numb"></label>
-    <label id="HassanB"></label><br>
-    <label id="Norblance"></label><br>
+  <!-- Table to display user information -->
+  <table id="userTable">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>University</th>
+        <th>Birth Date</th>
+        <th>Age</th>
+        <th>District</th>
+        <th>City</th>
+        <th>Total Marks</th>
+        <th>Grade</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
 
-    <label id="TRF"></label>
-    <input type="text" id="trnsfr"><br>
-
-    <label id="LastBh"></label><br>
-    <label id="LastBN"></label><br>
-    <input type="button" value="Submit " onclick="EVCBalance()">
-  
-   
-  </form>
-
-
-  
-       
-
-
-
-
-
+  <!-- Include your JavaScript file -->
+  <script src="js.js"></script>
   <script src="JavaBasics.js"></script>
 </body>
-
 </html>
-
-
