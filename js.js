@@ -39,7 +39,13 @@
     }
   }
 
-  
+  $(document).ready(function() {
+   
+    $("#totalMarks").on("keyup", function() {
+        var grade = calculateGrade();
+        $("#Grade").val(grade);
+    });
+});
   function calculateGrade() {
     var grade = parseFloat(document.getElementById("totalMarks").value);
      
