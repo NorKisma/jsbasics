@@ -91,3 +91,44 @@ function submitForm() {
   });
   $("#userTable tbody").append(newRow);
 }
+
+$(document).ready(function() {
+    $('.container').hide();
+    $('#scholarshipForm').hide();
+    function calculateGrade() {
+        var totalMarks = parseInt($('#totalMarks').val());
+        
+        if (!isNaN(totalMarks)) {
+            if (totalMarks >= 90) {
+                $('#Grade').val('A');
+                $('.container').fadeIn();
+                $('#scholarshipForm').fadeIn(); 
+            } else {
+                $('#Grade').val('');
+                $('#scholarshipForm').fadeOut(); 
+            }
+        } else {
+            $('#Grade').val('');
+            $('.container').fadeOut();
+            $('#scholarshipForm').fadeOut(); 
+        }
+    }
+    $('#totalMarks').on('input', calculateGrade);
+});
+
+
+$(document).ready(function() {
+    $("#btn2").click(function() {
+       
+        var fullName = $("#fullName").val();
+      
+        var listItem = $("<li>").text("Name: " + fullName );
+        $("#applicationList").append(listItem);
+
+        $("#fullName").val("");
+      
+    });
+});
+
+
+

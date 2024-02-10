@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .block {
+            display: flex;
+        }
+
+        .traffic {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 120px;
+            width: 120px;
+            background-color: gray;
+            border: 2px solid black;
+            border-radius: 50%;
+            margin: 40px;
+            transition: background-color 0.5s;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <h2>Traffic Light Demo</h2>
+
+    <div class="block">
+        <div id="greenLight" class="traffic"><p id="go">Go</p></div>
+        <div id="redLight" class="traffic"><p id="stop">Stop</p></div>
+        <div id="yellowLight" class="traffic"><p id="wait">Wait</p></div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            function changeColor() {
+                var yellowLight = $('#yellowLight');
+                var redLight = $('#redLight');
+                var greenLight = $('#greenLight');
+                var goText = $('#go');
+                var stopText = $('#stop');
+                var waitText = $('#wait');
+
+                if (yellowLight.css('background-color') === 'rgb(255, 255, 0)') {
+                    greenLight.css('background-color', 'green');
+                    stopText.css('color', 'black');
+                    waitText.css('color', 'black');
+                    goText.css('color', 'white');
+                    goText.css('visibility', 'visible');
+                    stopText.css('visibility', 'hidden');
+                    waitText.css('visibility', 'hidden');
+                    redLight.css('background-color', 'gray');
+                    yellowLight.css('background-color', 'gray');
+                } else if (greenLight.css('background-color') === 'rgb(0, 128, 0)') {
+                    greenLight.css('background-color', 'gray');
+                    yellowLight.css('background-color', 'gray');
+                    redLight.css('background-color', 'red');
+
+                    stopText.css('color', 'white');
+                    waitText.css('color', 'gray');
+                    goText.css('color', 'gray');
+                    stopText.css('visibility', 'visible');
+                    goText.css('visibility', 'hidden');
+                    waitText.css('visibility', 'hidden');
+                } else {
+                    greenLight.css('background-color', 'gray');
+                    redLight.css('background-color', 'gray');
+                    yellowLight.css('background-color', 'yellow');
+                    stopText.css('color', 'black');
+                    waitText.css('color', 'white');
+                    goText.css('color', 'black');
+                    waitText.css('visibility', 'visible');
+                    goText.css('visibility', 'hidden');
+                    stopText.css('visibility', 'hidden');
+                }
+            }
+
+            setInterval(changeColor, 1000);
+        });
+    </script>
+</body>
+
+</html>
